@@ -5,7 +5,7 @@ Resources:
   PolicyClientesIntegr:
     Type: 'AWS::IAM::Policy'
     Properties:
-      # Propiedades de la política, incluyendo la asignación al rol
+      PolicyName: "PolicyClientesIntegr"
       Roles:
         !ImportValue RolClientesIntegrArn
       PolicyDocument:
@@ -18,7 +18,7 @@ Resources:
   PolicyClientesIntcus:
     Type: 'AWS::IAM::Policy'
     Properties:
-      # Propiedades de la política, incluyendo la asignación al rol
+      PolicyName: "PolicyClientesIntcus"
       Roles:
         !ImportValue RolClientesIntcusArn
       PolicyDocument:

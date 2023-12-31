@@ -35,7 +35,7 @@ jobs:
     - name: Stack de CloudFormation 2
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
-        name: SA-Integr
+        name: SA-role
         template: cloudformation/roles/role.yaml
         capabilities: CAPABILITY_NAMED_IAM
         no-fail-on-empty-changeset: '1'

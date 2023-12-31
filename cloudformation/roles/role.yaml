@@ -5,6 +5,7 @@ Resources:
   RolClientesIntegr:
     Type: 'AWS::IAM::Role'
     Properties:
+      RoleName: "sa-eks-integr"
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -17,6 +18,7 @@ Resources:
 
   RolClientesIntcus:
     Type: 'AWS::IAM::Role'
+    RoleName: "sa-eks-intcus"
     Properties:
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
@@ -31,9 +33,9 @@ Resources:
 Outputs:
   RolClientesIntegrArn:
     Description: "ARN del Rol Clientes Integr"
-    Value: !GetAtt RolClientesIntegr.Arn
+    Value: !GetAtt RolClientesIntegr
     Export:
-      Name: RolClientesIntegrArn
+      Name: RolClientesIntegrName
 
   RolClientesIntcusArn:
     Description: "ARN del Rol Clientes Intcus"

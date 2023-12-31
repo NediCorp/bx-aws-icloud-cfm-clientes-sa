@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation para crear un IAM Role para EKS con política específica
+
+Resources:
+  MiIAMRoleEKS:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: "AllowEksAuthToAssumeRoleForPodIdentity"
+            Effect: "Allow"
+            Principal:
+              Service: "pods.eks.amazonaws.com"
+            Action:
+              - "sts:AssumeRole"
+              - "sts:TagSession"
+      Path: "/"
+
+  MiIAMPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyName: "MiEJSPolicy"
+      Roles:
+        - Ref: MiIAMRoleEKS
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "ec2:Describe*" # Ejemplo de permiso, ajusta según tus necesidades
+              - "s3:ListBucket" # Ejemplo de permiso, ajusta según tus necesidades
+            Resource: "*" # Ajusta los recursos según tus necesidades
+
+Outputs:
+  RoleARN:
+    Description: "ARN del Rol IAM para EKS"
+    Value: !GetAtt MiIAMRoleEKS.Arn

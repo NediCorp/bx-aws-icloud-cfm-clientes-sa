@@ -1,0 +1,28 @@
+# policies.yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Definición de políticas de IAM
+
+Resources:
+  PolicyClientesIntegr:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      # Propiedades de la política, incluyendo la asignación al rol
+      Roles: [ !Ref RolClientesIntegr ]
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "ec2:Describe*"
+
+  PolicyClientesIntcus:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      # Propiedades de la política, incluyendo la asignación al rol
+      Roles: [ !Ref RolClientesintcus ]
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Action:
+              - "ec2:Describe*"

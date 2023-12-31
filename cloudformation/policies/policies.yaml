@@ -7,7 +7,7 @@ Resources:
     Properties:
       PolicyName: "PolicyClientesIntegr"
       Roles:
-        !ImportValue RolClientesIntegrArn
+        - !ImportValue RolClientesIntegrArn
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -21,7 +21,7 @@ Resources:
     Properties:
       PolicyName: "PolicyClientesIntcus"
       Roles:
-        !ImportValue RolClientesIntcusArn
+        - !ImportValue RolClientesIntcusArn
       PolicyDocument:
         Version: "2012-10-17"
         Statement:

@@ -31,7 +31,7 @@ Resources:
       # Path: "/clientes/intcus/"
 
 Outputs:
-  RolClientesIntegrArn:
+  RolClientesIntegrName:
     Description: "ARN del Rol Clientes Integr"
     Value: !GetAtt RolClientesIntegr
     Export:

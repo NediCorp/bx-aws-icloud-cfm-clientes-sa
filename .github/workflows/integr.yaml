@@ -24,7 +24,7 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_CFN }}
         role-session-name: GitHubActionsAWSAccess
 
-    - name: Stack de CloudFormation 1
+    - name: Stack de Cfn Role Integr
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
         name: SA-Integr

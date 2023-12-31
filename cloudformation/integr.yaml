@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: CloudFormation para crear un IAM Role para EKS con política específica
 
 Resources:
-  MiIAMRoleEKS:
+  RoleSaIntegr:
     Type: 'AWS::IAM::Role'
     Properties:
       AssumeRolePolicyDocument:
@@ -17,12 +17,12 @@ Resources:
               - "sts:TagSession"
       Path: "/"
 
-  MiIAMPolicy:
+  policy-sa-integr:
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: "MiEJSPolicy"
+      PolicyName: "sa-integr"
       Roles:
-        - Ref: MiIAMRoleEKS
+        - Ref: RoleSaIntegr
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -35,4 +35,4 @@ Resources:
 Outputs:
   RoleARN:
     Description: "ARN del Rol IAM para EKS"
-    Value: !GetAtt MiIAMRoleEKS.Arn
+    Value: !GetAtt RoleSaIntegr.Arn

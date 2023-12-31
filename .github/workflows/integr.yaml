@@ -4,12 +4,6 @@ on:
   push:
     branches:
       - development
-  # workflow_dispatch:
-  #   inputs:
-  #     region:
-  #       description: 'AWS Region'
-  #       required: true
-  #       default: 'eu-west-1'
 
 jobs:
   cluster:
@@ -18,8 +12,7 @@ jobs:
     permissions:
         id-token: write
         contents: read
-    outputs:
-      env-name: ${{ steps.env-name.outputs.environment }}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -31,39 +24,11 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_CFN }}
         role-session-name: GitHubActionsAWSAccess
 
-    - name: Configure environment name
-      id: env-name
-      env:
-        REPO: ${{ github.repository }}
-      run: |
-        ENVIRONMENT=`echo $REPO | tr "/" "-"`
-        echo "Environment name: $ENVIRONMENT"
-        echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
-
-    - name: Listar Directorio
-      run: ls -la
-
-    # - name: Deploy Amazon EKS Cluster
-    #   id: eks-cluster
-    #   uses: aws-actions/aws-cloudformation-github-deploy@v1
-    #   with:
-    #     name: ${{ steps.env-name.outputs.environment }}-cluster
-    #     template: https://s3.amazonaws.com/aws-quickstart/quickstart-amazon-eks/templates/amazon-eks-master.template.yaml
-    #     no-fail-on-empty-changeset: "1"
-    #     parameter-overrides: >-
-    #       AvailabilityZones=${{ github.event.inputs.region }}a,
-    #       AvailabilityZones=${{ github.event.inputs.region }}c,
-    #       KeyPairName=${{ github.event.inputs.keypair }},
-    #       NumberOfAZs=2,
-    #       ProvisionBastionHost=Disabled,
-    #       EKSPublicAccessEndpoint=Enabled,
-    #       EKSPrivateAccessEndpoint=Enabled,
-    #       RemoteAccessCIDR=0.0.0.0/0
-
-    - name: Desplegar stack de CloudFormation
+    - name: Stack de CloudFormation
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
-        name: nombre-de-tu-stack
-        template: cloudformation.yaml
+        name: SA-Integr
+        template: cloudformation/integr.yaml
         capabilities: CAPABILITY_IAM
         no-fail-on-empty-changeset: '1'
+

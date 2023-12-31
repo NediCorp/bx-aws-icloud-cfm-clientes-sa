@@ -33,7 +33,7 @@ Resources:
 Outputs:
   RolClientesIntegrName:
     Description: "ARN del Rol Clientes Integr"
-    Value: !GetAtt RolClientesIntegr
+    Value: !GetAtt RolClientesIntegr.Arn
     Export:
       Name: RolClientesIntegrName
 

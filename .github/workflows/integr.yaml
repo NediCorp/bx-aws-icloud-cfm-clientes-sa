@@ -1,6 +1,9 @@
 name: Deploy Cluster
 
 on:
+  push:
+    branches:
+      - development
   # workflow_dispatch:
   #   inputs:
   #     region:

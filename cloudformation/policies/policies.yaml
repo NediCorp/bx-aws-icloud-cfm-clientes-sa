@@ -30,11 +30,11 @@ Resources:
               - "ec2:DescribeInstances*"
             Resource: "*"
 
-Outputs:
-  PolicyClientesIntegrArn:
-    Description: "ARN de la política Clientes Integr"
-    Value: !Ref PolicyClientesIntegr
+# Outputs:
+#   PolicyClientesIntegrArn:
+#     Description: "ARN de la política Clientes Integr"
+#     Value: !Ref PolicyClientesIntegr
 
-  PolicyClientesIntcusArn:
-    Description: "ARN de la política Clientes Intcus"
-    Value: !Ref PolicyClientesIntcus
+#   PolicyClientesIntcusArn:
+#     Description: "ARN de la política Clientes Intcus"
+#     Value: !Ref PolicyClientesIntcus

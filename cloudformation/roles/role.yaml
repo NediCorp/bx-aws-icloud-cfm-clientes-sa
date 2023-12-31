@@ -5,7 +5,7 @@ Resources:
   RolClientesIntegr:
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: "sa-eks-integr"
+      # RoleName: "sa-eks-integr"
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -18,7 +18,7 @@ Resources:
 
   RolClientesIntcus:
     Type: 'AWS::IAM::Role'
-    RoleName: "sa-eks-intcus"
+    # RoleName: "sa-eks-intcus"
     Properties:
       AssumeRolePolicyDocument:
         Version: '2012-10-17'

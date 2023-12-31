@@ -32,7 +32,7 @@ jobs:
         capabilities: CAPABILITY_NAMED_IAM
         no-fail-on-empty-changeset: '1'
 
-    - name: Stack de CloudFormation 2
+    - name: Stack de CloudFormation Role
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
         name: SA-role
@@ -40,7 +40,7 @@ jobs:
         capabilities: CAPABILITY_NAMED_IAM
         no-fail-on-empty-changeset: '1'
 
-    - name: Stack de CloudFormation 3
+    - name: Stack de CloudFormation Policies
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
         name: SA-policies

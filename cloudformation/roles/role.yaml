@@ -27,3 +27,16 @@ Resources:
               Service: "pods.eks.amazonaws.com"
             Action: "sts:AssumeRole"
       Path: "/clientes/intcus/"
+
+Outputs:
+  RolClientesIntegrArn:
+    Description: "ARN del Rol Clientes Integr"
+    Value: !GetAtt RolClientesIntegr.Arn
+    Export:
+      Name: RolClientesIntegrArn
+
+  RolClientesIntcusArn:
+    Description: "ARN del Rol Clientes Intcus"
+    Value: !GetAtt RolClientesIntcus.Arn
+    Export:
+      Name: RolClientesIntcusArn

@@ -14,6 +14,7 @@ Resources:
           - Effect: "Allow"
             Action:
               - "ec2:Describe*"
+            Resource: "*"
 
   PolicyClientesIntcus:
     Type: 'AWS::IAM::Policy'
@@ -27,6 +28,7 @@ Resources:
           - Effect: "Allow"
             Action:
               - "ec2:Describe*"
+            Resource: "*"
 
 Outputs:
   PolicyClientesIntegrArn:

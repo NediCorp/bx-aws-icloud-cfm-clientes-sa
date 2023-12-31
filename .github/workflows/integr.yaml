@@ -40,6 +40,9 @@ jobs:
         echo "Environment name: $ENVIRONMENT"
         echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
 
+    - name: Listar Directorio
+      run: ls -la
+
     # - name: Deploy Amazon EKS Cluster
     #   id: eks-cluster
     #   uses: aws-actions/aws-cloudformation-github-deploy@v1

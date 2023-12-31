@@ -13,7 +13,7 @@ Resources:
         Statement:
           - Effect: "Allow"
             Action:
-              - "ec2:Describe*"
+              - "ec2:DescribeInstances*"
             Resource: "*"
 
   PolicyClientesIntcus:
@@ -27,7 +27,7 @@ Resources:
         Statement:
           - Effect: "Allow"
             Action:
-              - "ec2:Describe*"
+              - "ec2:DescribeInstances*"
             Resource: "*"
 
 Outputs:

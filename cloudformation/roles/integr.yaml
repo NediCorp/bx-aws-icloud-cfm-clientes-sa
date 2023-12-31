@@ -29,7 +29,7 @@ Resources:
         Statement:
           - Effect: "Allow"
             Action:
-              - "ec2:Describe*" # Ejemplo de permiso, ajusta según tus necesidades
+              - "ec2:DescribeInstances*" # Ejemplo de permiso, ajusta según tus necesidades
               # - "s3:ListBucket" # Ejemplo de permiso, ajusta según tus necesidades
             Resource: "*" # Ajusta los recursos según tus necesidades
 

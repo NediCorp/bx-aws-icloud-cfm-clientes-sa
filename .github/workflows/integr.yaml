@@ -24,7 +24,7 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_CFN }}
         role-session-name: GitHubActionsAWSAccess
 
-    - name: Stack de CloudFormation
+    - name: Stack de CloudFormation 1
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
         name: SA-Integr
@@ -32,7 +32,7 @@ jobs:
         capabilities: CAPABILITY_NAMED_IAM
         no-fail-on-empty-changeset: '1'
 
-    - name: Stack de CloudFormation
+    - name: Stack de CloudFormation 2
       uses: aws-actions/aws-cloudformation-github-deploy@v1
       with:
         name: SA-Integr

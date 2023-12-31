@@ -27,3 +27,12 @@ Resources:
           - Effect: "Allow"
             Action:
               - "ec2:Describe*"
+
+Outputs:
+  PolicyClientesIntegrArn:
+    Description: "ARN de la política Clientes Integr"
+    Value: !Ref PolicyClientesIntegr
+
+  PolicyClientesIntcusArn:
+    Description: "ARN de la política Clientes Intcus"
+    Value: !Ref PolicyClientesIntcus

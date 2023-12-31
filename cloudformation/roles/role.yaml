@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Ejemplo de roles de IAM para dominio de clientes
+
+Resources:
+  RolClientesIntegr:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: "AllowEksAuthToAssumeRoleForPodIdentity"
+            Effect: "Allow"
+            Principal:
+              Service: "pods.eks.amazonaws.com"
+            Action: "sts:AssumeRole"
+      Path: "/clientes/integr/"
+
+  RolClientesintcus:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: "AllowEksAuthToAssumeRoleForPodIdentity"
+            Effect: "Allow"
+            Principal:
+              Service: "pods.eks.amazonaws.com"
+            Action: "sts:AssumeRole"
+      Path: "/clientes/intcus/"

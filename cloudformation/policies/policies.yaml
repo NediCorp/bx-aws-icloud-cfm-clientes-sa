@@ -21,7 +21,7 @@ Resources:
     Properties:
       PolicyName: "PolicyClientesIntcus"
       Roles:
-        - !ImportValue RolClientesIntcusArn
+        - !ImportValue RolClientesIntcusName
       PolicyDocument:
         Version: "2012-10-17"
         Statement:

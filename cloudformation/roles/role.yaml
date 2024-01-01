@@ -32,13 +32,13 @@ Resources:
 
 Outputs:
   RolClientesIntegrName:
-    Description: "ARN del Rol Clientes Integr"
+    Description: "Name del Rol Clientes Integr"
     Value: !Ref RolClientesIntegr
     Export:
       Name: RolClientesIntegrName
 
-  RolClientesIntcusArn:
-    Description: "ARN del Rol Clientes Intcus"
+  RolClientesIntcusName:
+    Description: "Name del Rol Clientes Intcus"
     Value: !Ref RolClientesIntcus
     Export:
-      Name: RolClientesIntcusArn
+      Name: RolClientesIntcusName
